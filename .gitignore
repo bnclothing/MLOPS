@@ -1,0 +1,15 @@
+.venv/
+.python/
+.tools/
+uv.zip
+__pycache__/
+.ipynb_checkpoints/
+.jupyter/
+data/raw/
+data/processed/
+artifacts/*.pt
+artifacts/*.onnx
+artifacts/*.joblib
+artifacts/*.csv
+artifacts/*.json
+artifacts/*.png
