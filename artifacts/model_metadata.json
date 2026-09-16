@@ -1,0 +1,46 @@
+{
+  "project": "Virtual screening de mol\u00e9cules bioactives",
+  "target": {
+    "chembl_id": "CHEMBL203",
+    "name": "Epidermal growth factor receptor (EGFR)"
+  },
+  "task": "binary classification",
+  "label_definition": {
+    "active": "pChEMBL >= 6.5",
+    "inactive": "pChEMBL <= 5.5",
+    "gray_zone": "excluded"
+  },
+  "input": {
+    "type": "Morgan bit fingerprint",
+    "radius": 2,
+    "n_bits": 2048,
+    "standardization": "RDKit Cleanup + FragmentParent + Uncharger"
+  },
+  "split": "Bemis-Murcko scaffold split 80/10/10",
+  "decision_threshold": 0.13999999999999999,
+  "metrics_test": {
+    "roc_auc": 0.9200114772913591,
+    "pr_auc": 0.9732276859365088,
+    "mcc": 0.5818892663899641,
+    "balanced_accuracy": 0.7592884079357272,
+    "decision_threshold": 0.13999999999999999,
+    "n_test": 832
+  },
+  "dataset": {
+    "n_curated": 8325,
+    "n_train": 6660,
+    "n_valid": 833,
+    "n_test": 832,
+    "chembl_db_version": "ChEMBL_37",
+    "downloaded_at_utc": "2026-09-15T19:23:05.327100+00:00"
+  },
+  "runtime": {
+    "torch": "2.11.0+cu128",
+    "rdkit": "2026.03.6"
+  },
+  "limitations": [
+    "Priorisation in silico uniquement; validation exp\u00e9rimentale requise.",
+    "Les scores hors du domaine chimique du train sont moins fiables.",
+    "Le split scaffold r\u00e9duit mais n'\u00e9limine pas toutes les formes de fuite de donn\u00e9es."
+  ]
+}

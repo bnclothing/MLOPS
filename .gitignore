@@ -7,9 +7,14 @@ __pycache__/
 .jupyter/
 data/raw/
 data/processed/
-artifacts/*.pt
-artifacts/*.onnx
+# Generated artifacts are ignored by default. The trained, deployable model files below
+# are explicitly versioned so a fresh clone can start the API without retraining.
+artifacts/*
+!artifacts/bioactivity_mlp_scripted.pt
+!artifacts/bioactivity_mlp_state_dict.pt
+!artifacts/bioactivity_mlp.onnx
+!artifacts/model_metadata.json
+!artifacts/SHA256SUMS.txt
 artifacts/*.joblib
 artifacts/*.csv
-artifacts/*.json
 artifacts/*.png
